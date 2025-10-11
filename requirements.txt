@@ -1,0 +1,8 @@
+playwright
+beautifulsoup4
+markdownify
+langchain
+langchain_community
+sentence-transformers
+chromadb
+ollama
