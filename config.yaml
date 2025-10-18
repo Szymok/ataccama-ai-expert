@@ -1,0 +1,41 @@
+# Configuration file for Ataccama AI Expert
+
+# Crawling configuration
+crawling:
+  default_start_urls:
+    - "https://docs.ataccama.com/one/latest/overview.html"
+  output_dir: "./data/01_raw"
+  max_pages: 100
+  allowed_host: "docs.ataccama.com"
+  delay: 1.0  # seconds between requests
+  timeout: 60000  # milliseconds
+
+# Data processing configuration
+processing:
+  input_dir: "./data/01_raw"
+  output_file: "./data/02_processed/chunks.jsonl"
+  chunk_size: 1000
+  chunk_overlap: 100
+
+# Q&A system configuration
+qa:
+  data_file: "./data/02_processed/chunks.jsonl"
+  vector_store_path: "./data/03_vector_store"
+  model_name: "llama3"
+  embedding_model_name: "all-MiniLM-L6-v2"
+  search_kwargs:
+    k: 5  # number of documents to retrieve
+    score_threshold: 0.5  # minimum similarity score
+
+# Directories configuration
+directories:
+  raw: "./data/01_raw"
+  processed: "./data/02_processed"
+  vector_store: "./data/03_vector_store"
+  logs: "./logs"
+
+# Logging configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "ataccama_expert.log"

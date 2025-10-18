@@ -1,8 +1,9 @@
-playwright
-beautifulsoup4
-markdownify
-langchain
-langchain_community
-sentence-transformers
-chromadb
-ollama
+playwright>=1.40.0
+beautifulsoup4>=4.12.0
+markdownify>=0.11.0
+langchain>=0.1.0
+langchain_community>=0.0.20
+sentence-transformers>=2.2.0
+chromadb>=0.4.0
+ollama>=0.1.0
+PyYAML>=6.0
